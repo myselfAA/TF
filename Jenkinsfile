@@ -17,7 +17,7 @@ pipeline {
         stage('Deployment') {
             steps {
                 echo 'Deploying to container'
-                deploy adapters: [tomcat8(credentialsId: 'admin/admin', path: '', url: 'http://172.31.19.81:8088')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat8(credentialsId: 'tomcat/tomcat', path: '', url: 'http://172.31.19.81:8088')], contextPath: null, war: '**/*.war'
             }
         }
     }
